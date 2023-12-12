@@ -2,50 +2,56 @@
 let videoPlaylist={
     title:'Education Videos',
     videos:[{
-        url:'https://youtu.be/BSQ3LSwyWlE?list=PLcvhF2Wqh7DMufolk_eudZOuchfsG2hRT',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'JavaScript - Way of the Samurai, Browser, first program, foreign language learning simulator',
         author: 'It-Kamasutra',
         dateOfRelise: 'Live Stream',
-        isStream: true
+        isStream: true,
+        coverImg:'./img/cover/Rectangle 108.png'
     },
     {
-        url:'...some url',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'JavaScript - The Way of the Samurai, installing VS code, code editor',
         author: 'It-Kamasutra',
         dateOfRelise: '1 week ago',
-        isStream: false
+        isStream: false,
+        coverImg:'./img/cover/Rectangle 108-1.png'
     },
     {
-        url:'...some url',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'Reboot - express + typescript + nodemon / Back-end - The Samurai Way',
         author: 'It-Kamasutra',
         dateOfRelise: '2 week ago',
-        isStream: false
+        isStream: false,
+        coverImg:'./img/cover/Rectangle 108-2.png'
     }
     ]
 }
 let videoPlaylist2={
     title:'Online training sports',
     videos:[{
-        url:'...some url',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: '20 MIN FULL BODY WORKOUT - Beginner Version // No Equipment I Pamela Reif',
         author: 'Pamela Reif',
         dateOfRelise: '12 hours ago',
-        isStream: false
+        isStream: false,
+        coverImg:'./img/cover/Rectangle 108-3.png'
     },
     {
-        url:'...some url',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'Sports training online — filming and editing - Stretching Yoga',
         author: 'Seva Prihodko',
         date: '1 week ago',
-        isStream: false
+        isStream: false,
+        coverImg:'./img/cover/Rectangle 108-4.png'
     },
     {
-        url:'...some url',
+        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'PERFECT 20 MIN FULL BODY WORKOUT FOR BEGINNERS (No Equipment)',
         author: 'BullyJuice',
         date: '2 week ago',
-        isStream: false
+        isStream: false,
+        coverImg:'./img/cover/Rectangle 108-5.png'
     }
     ]
 }
@@ -62,8 +68,9 @@ function renderVideoItemPlayer(videoPlaylistItemForRender){
 
     let videoPlayer = document.createElement('video');
     videoPlayer.src = videoPlaylistItemForRender.url;
+    videoPlayer.poster = videoPlaylistItemForRender.coverImg;
     videoPlayer.controls = true;
-    console.log(videoPlayer.canPlayType);
+    console.log(videoPlayer);
     videoPlayerContainer.append(videoPlayer);
 
     return videoPlayerContainer;
