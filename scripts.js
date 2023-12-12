@@ -41,7 +41,7 @@ let videoPlaylist2={
         url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'Sports training online — filming and editing - Stretching Yoga',
         author: 'Seva Prihodko',
-        date: '1 week ago',
+        dateOfRelise: '1 week ago',
         isStream: false,
         coverImg:'./img/cover/Rectangle 108-4.png'
     },
@@ -49,7 +49,7 @@ let videoPlaylist2={
         url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'PERFECT 20 MIN FULL BODY WORKOUT FOR BEGINNERS (No Equipment)',
         author: 'BullyJuice',
-        date: '2 week ago',
+        dateOfRelise: '2 week ago',
         isStream: false,
         coverImg:'./img/cover/Rectangle 108-5.png'
     }
