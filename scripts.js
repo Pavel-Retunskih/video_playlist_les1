@@ -1,5 +1,5 @@
 //*-----------------Data of video playlists
-let videoPlaylist={
+let videoPlaylist=[{
     title:'Education Videos',
     videos:[{
         url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
@@ -26,8 +26,7 @@ let videoPlaylist={
         coverImg:'./img/cover/Rectangle 108-2.png'
     }
     ]
-}
-let videoPlaylist2={
+},{
     title:'Online training sports',
     videos:[{
         url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
@@ -56,12 +55,18 @@ let videoPlaylist2={
     ]
 }
 
-//*-----------------Render of playlists
-// renderPlaylist()
-renderVideoItemsContainer(videoPlaylist)
-renderVideoItemsContainer(videoPlaylist2)
+]
 
+
+//*-----------------Render of playlists
+renderPlaylist(videoPlaylist)
 //*-----------------Functions for render
+function renderPlaylist(videoPlaylistData){
+    for (let i = 0; i < videoPlaylistData.length; i++) {
+        const element = videoPlaylistData[i];
+        renderVideoItemsContainer(element)
+    }
+}
 function renderVideoItemPlayer(videoPlaylistItemForRender){
     let videoPlayerContainer = document.createElement('div');
     videoPlayerContainer.classList.add('videoplayer_container');
@@ -88,7 +93,7 @@ function renderVideoItemTitle(videoPlaylistItemForRender) {
 
     videoTitle.innerHTML = videoPlaylistItemForRender.decription
     videoAuthor.innerHTML = videoPlaylistItemForRender.author
-    relise.innerHTML = videoPlaylistItemForRender.isStream === true ? `<span class = 'stream'>Live Stream</span>`: videoPlaylistItemForRender.dateOfRelise
+    relise.innerHTML = videoPlaylistItemForRender.isStream ? `<span class = 'stream'>Live Stream</span>`: videoPlaylistItemForRender.dateOfRelise
 
     videoTitleContainer.append(videoTitle, videoAuthor, relise);
      return videoTitleContainer;
