@@ -1,56 +1,56 @@
 //*-----------------Data of video playlists
-let videoPlaylist=[{
-    title:'Education Videos',
-    videos:[{
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+let videoPlaylist = [{
+    title: 'Education Videos',
+    videos: [{
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'JavaScript - Way of the Samurai, Browser, first program, foreign language learning simulator',
         author: 'It-Kamasutra',
         dateOfRelise: 'Live Stream',
         isStream: true,
-        coverImg:'./img/cover/Rectangle 108.png'
+        coverImg: './img/cover/Rectangle 108.png'
     },
     {
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'JavaScript - The Way of the Samurai, installing VS code, code editor',
         author: 'It-Kamasutra',
         dateOfRelise: '1 week ago',
         isStream: false,
-        coverImg:'./img/cover/Rectangle 108-1.png'
+        coverImg: './img/cover/Rectangle 108-1.png'
     },
     {
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'Reboot - express + typescript + nodemon / Back-end - The Samurai Way',
         author: 'It-Kamasutra',
         dateOfRelise: '2 week ago',
         isStream: false,
-        coverImg:'./img/cover/Rectangle 108-2.png'
+        coverImg: './img/cover/Rectangle 108-2.png'
     }
     ]
-},{
-    title:'Online training sports',
-    videos:[{
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+}, {
+    title: 'Online training sports',
+    videos: [{
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: '20 MIN FULL BODY WORKOUT - Beginner Version // No Equipment I Pamela Reif',
         author: 'Pamela Reif',
         dateOfRelise: '12 hours ago',
         isStream: false,
-        coverImg:'./img/cover/Rectangle 108-3.png'
+        coverImg: './img/cover/Rectangle 108-3.png'
     },
     {
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'Sports training online — filming and editing - Stretching Yoga',
         author: 'Seva Prihodko',
         dateOfRelise: '1 week ago',
         isStream: false,
-        coverImg:'./img/cover/Rectangle 108-4.png'
+        coverImg: './img/cover/Rectangle 108-4.png'
     },
     {
-        url:'./video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
+        url: './video/Rick Astley - Never Gonna Give You Up (Official Music Video).mp4',
         decription: 'PERFECT 20 MIN FULL BODY WORKOUT FOR BEGINNERS (No Equipment)',
         author: 'BullyJuice',
         dateOfRelise: '2 week ago',
         isStream: false,
-        coverImg:'./img/cover/Rectangle 108-5.png'
+        coverImg: './img/cover/Rectangle 108-5.png'
     }
     ]
 }
@@ -61,13 +61,13 @@ let videoPlaylist=[{
 //*-----------------Render of playlists
 renderPlaylist(videoPlaylist)
 //*-----------------Functions for render
-function renderPlaylist(videoPlaylistData){
+function renderPlaylist(videoPlaylistData) {
     for (let i = 0; i < videoPlaylistData.length; i++) {
-        const element = videoPlaylistData[i];
-        renderVideoItemsContainer(element)
+        const elementOfPlaylistData = videoPlaylistData[i];
+        renderVideoItemsContainer(elementOfPlaylistData)
     }
 }
-function renderVideoItemPlayer(videoPlaylistItemForRender){
+function renderVideoItemPlayer(videoPlaylistItemForRender) {
     let videoPlayerContainer = document.createElement('div');
     videoPlayerContainer.classList.add('videoplayer_container');
 
@@ -93,31 +93,31 @@ function renderVideoItemTitle(videoPlaylistItemForRender) {
 
     videoTitle.innerHTML = videoPlaylistItemForRender.decription
     videoAuthor.innerHTML = videoPlaylistItemForRender.author
-    relise.innerHTML = videoPlaylistItemForRender.isStream ? `<span class = 'stream'>Live Stream</span>`: videoPlaylistItemForRender.dateOfRelise
+    relise.innerHTML = videoPlaylistItemForRender.isStream ? `<span class = 'stream'>Live Stream</span>` : videoPlaylistItemForRender.dateOfRelise
 
     videoTitleContainer.append(videoTitle, videoAuthor, relise);
-     return videoTitleContainer;
+    return videoTitleContainer;
 }
 function renderVideoItemsContainer(videoPlaylist) {
     let videoplaylistWrap = document.createElement('div');
     videoplaylistWrap.classList.add('videoplaylist_wrap');
     document.querySelector('#wrap').append(videoplaylistWrap);
-    
+
     let playlistTitle = document.createElement('div');
     playlistTitle.innerHTML = `<h2>${videoPlaylist.title}</h2>`;
     videoplaylistWrap.append(playlistTitle);
 
-    let videoItemsContainer =document.createElement('div');
+    let videoItemsContainer = document.createElement('div');
     videoItemsContainer.classList.add('video_items_container');
     videoplaylistWrap.append(videoItemsContainer);
 
     for (let i = 0; i < videoPlaylist.videos.length; i++) {
         let videoItemContainer = document.createElement('div');
         videoItemContainer.classList.add('video_item_container');
-        videoItemsContainer.append(videoItemContainer);    
+        videoItemsContainer.append(videoItemContainer);
 
         videoItemContainer.append(renderVideoItemPlayer(videoPlaylist.videos[i]));
         videoItemContainer.append(renderVideoItemTitle(videoPlaylist.videos[i]));
     }
-    
+
 }
